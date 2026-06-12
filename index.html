@@ -7,5 +7,17 @@
 <body>
     <h1>🎉 成功啦！</h1>
     <p>我的第一个 GitHub Pages 网站</p>
+    <p>你是第 <span id="count">加载中...</span> 位访客</p>
+
+<script>
+  fetch('/visit')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('count').innerText = data.visits;
+    })
+    .catch(() => {
+      document.getElementById('count').innerText = '无法连接';
+    });
+</script>
 </body>
 </html>
