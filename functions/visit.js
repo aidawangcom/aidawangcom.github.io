@@ -1,7 +1,7 @@
 export async function onRequest({ request, env }) {
     try {
         // 尝试读取 visits，如果取不到或者格式不对，就初始化它为 0
-        let count = await env.COUNTER.get("visits");
+        let count = await  env.COUNTER.get("visits");
         
         // 如果读出来不是数字，或者压根没读到，就把它重置成 0
         if (isNaN(parseInt(count))) {
