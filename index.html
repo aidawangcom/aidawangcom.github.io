@@ -8,3 +8,14 @@
     <h1>🎉 成功啦！</h1>
     <p>我的第一个 GitHub Pages 网站</p>
 
+    <p>当前访问人数：<span id="num"></span></p>
+
+    <script>
+        let count = localStorage.getItem("visitNum");
+        if (!count) count = 0;
+        count = Number(count) + 1;
+        localStorage.setItem("visitNum", count);
+        document.getElementById("num").innerText = count;
+    </script>
+</body>
+</html>
