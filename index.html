@@ -7,4 +7,13 @@
 <body>
     <h1>🎉 成功啦！</h1>
     <p>我的第一个 GitHub Pages 网站</p>
-  
+  <div>
+  当前访问人数：<span id="num"></span>
+</div>
+<script>
+fetch("https://visit-counter.18032721531.workers.dev/?page=home")
+.then(res=>res.json())
+.then(data=>{
+  document.getElementById("num").innerText = data.count
+})
+</script>
